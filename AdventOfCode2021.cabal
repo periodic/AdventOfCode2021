@@ -1,0 +1,69 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 54f98c739661eac8594e45555db9c199dfbfe98a7526f35f54d51b4040d53192
+
+name:           AdventOfCode2021
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/periodic/AdventOfCode2021#readme>
+homepage:       https://github.com/Periodic/AdventOfCode2021#readme
+bug-reports:    https://github.com/Periodic/AdventOfCode2021/issues
+author:         Drew Haven
+maintainer:     drew.haven@gmail.com
+copyright:      2021 Drew Haven
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/Periodic/AdventOfCode2021
+
+library
+  exposed-modules:
+      Common
+      Constraints
+      Exercise
+      Vector3
+      Vector4
+  other-modules:
+      Paths_AdventOfCode2021
+  hs-source-dirs:
+      lib
+  default-extensions: OverloadedStrings GeneralizedNewtypeDeriving NamedFieldPuns BangPatterns GADTs LambdaCase RankNTypes TupleSections
+  ghc-options: -O -rtsopts
+  build-depends:
+      attoparsec >=0.13
+    , base >=4.7 && <5
+    , containers >=0.6
+    , criterion >=1.5.7
+    , extra >=1.7
+    , lens >=4.0
+    , optparse-applicative >=0.15
+    , text >=1.0
+    , vector >=0.12
+  default-language: Haskell2010
+
+executable Day01
+  main-is: Main.hs
+  other-modules:
+      Paths_AdventOfCode2021
+  hs-source-dirs:
+      src/Day01
+  default-extensions: OverloadedStrings GeneralizedNewtypeDeriving NamedFieldPuns BangPatterns GADTs LambdaCase RankNTypes TupleSections
+  ghc-options: -O -rtsopts
+  build-depends:
+      AdventOfCode2021
+    , attoparsec >=0.13
+    , base >=4.7 && <5
+    , containers >=0.6
+    , extra >=1.7
+    , lens >=4.0
+    , text >=1.0
+    , vector >=0.12
+  default-language: Haskell2010
