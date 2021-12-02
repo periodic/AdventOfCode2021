@@ -53,3 +53,10 @@ executables:
     source-dirs:         src/Day01
     dependencies:
       - AdventOfCode2021
+
+  Day02:
+    main:                Main.hs
+    source-dirs:         src/Day02
+    dependencies:
+      - AdventOfCode2021
+      - linear >= 1.21
