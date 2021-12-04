@@ -72,3 +72,4 @@ executables:
     source-dirs:         src/Day04
     dependencies:
       - AdventOfCode2021
+      - array
