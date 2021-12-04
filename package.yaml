@@ -66,3 +66,9 @@ executables:
     source-dirs:         src/Day03
     dependencies:
       - AdventOfCode2021
+
+  Day04:
+    main:                Main.hs
+    source-dirs:         src/Day04
+    dependencies:
+      - AdventOfCode2021
