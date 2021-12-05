@@ -73,3 +73,10 @@ executables:
     dependencies:
       - AdventOfCode2021
       - array
+
+  Day05:
+    main:                Main.hs
+    source-dirs:         src/Day05
+    dependencies:
+      - AdventOfCode2021
+      - array
