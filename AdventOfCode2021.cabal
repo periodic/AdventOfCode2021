@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 1e2b744494d704811e4916442f8988185141d753535f110c4c556713e8b09c2c
+-- hash: 680cba836df58b7c69743f838ac404f4502934f68def025599b658b60623a6c4
 
 name:           AdventOfCode2021
 version:        0.1.0.0
@@ -35,7 +35,15 @@ library
       Paths_AdventOfCode2021
   hs-source-dirs:
       lib
-  default-extensions: OverloadedStrings GeneralizedNewtypeDeriving NamedFieldPuns BangPatterns GADTs LambdaCase RankNTypes TupleSections
+  default-extensions:
+      OverloadedStrings
+      GeneralizedNewtypeDeriving
+      NamedFieldPuns
+      BangPatterns
+      GADTs
+      LambdaCase
+      RankNTypes
+      TupleSections
   ghc-options: -O -rtsopts
   build-depends:
       attoparsec >=0.13
@@ -55,7 +63,15 @@ executable Day01
       Paths_AdventOfCode2021
   hs-source-dirs:
       src/Day01
-  default-extensions: OverloadedStrings GeneralizedNewtypeDeriving NamedFieldPuns BangPatterns GADTs LambdaCase RankNTypes TupleSections
+  default-extensions:
+      OverloadedStrings
+      GeneralizedNewtypeDeriving
+      NamedFieldPuns
+      BangPatterns
+      GADTs
+      LambdaCase
+      RankNTypes
+      TupleSections
   ghc-options: -O -rtsopts
   build-depends:
       AdventOfCode2021
@@ -74,7 +90,15 @@ executable Day02
       Paths_AdventOfCode2021
   hs-source-dirs:
       src/Day02
-  default-extensions: OverloadedStrings GeneralizedNewtypeDeriving NamedFieldPuns BangPatterns GADTs LambdaCase RankNTypes TupleSections
+  default-extensions:
+      OverloadedStrings
+      GeneralizedNewtypeDeriving
+      NamedFieldPuns
+      BangPatterns
+      GADTs
+      LambdaCase
+      RankNTypes
+      TupleSections
   ghc-options: -O -rtsopts
   build-depends:
       AdventOfCode2021
@@ -94,7 +118,15 @@ executable Day03
       Paths_AdventOfCode2021
   hs-source-dirs:
       src/Day03
-  default-extensions: OverloadedStrings GeneralizedNewtypeDeriving NamedFieldPuns BangPatterns GADTs LambdaCase RankNTypes TupleSections
+  default-extensions:
+      OverloadedStrings
+      GeneralizedNewtypeDeriving
+      NamedFieldPuns
+      BangPatterns
+      GADTs
+      LambdaCase
+      RankNTypes
+      TupleSections
   ghc-options: -O -rtsopts
   build-depends:
       AdventOfCode2021
@@ -113,7 +145,15 @@ executable Day04
       Paths_AdventOfCode2021
   hs-source-dirs:
       src/Day04
-  default-extensions: OverloadedStrings GeneralizedNewtypeDeriving NamedFieldPuns BangPatterns GADTs LambdaCase RankNTypes TupleSections
+  default-extensions:
+      OverloadedStrings
+      GeneralizedNewtypeDeriving
+      NamedFieldPuns
+      BangPatterns
+      GADTs
+      LambdaCase
+      RankNTypes
+      TupleSections
   ghc-options: -O -rtsopts
   build-depends:
       AdventOfCode2021
@@ -133,7 +173,15 @@ executable Day05
       Paths_AdventOfCode2021
   hs-source-dirs:
       src/Day05
-  default-extensions: OverloadedStrings GeneralizedNewtypeDeriving NamedFieldPuns BangPatterns GADTs LambdaCase RankNTypes TupleSections
+  default-extensions:
+      OverloadedStrings
+      GeneralizedNewtypeDeriving
+      NamedFieldPuns
+      BangPatterns
+      GADTs
+      LambdaCase
+      RankNTypes
+      TupleSections
   ghc-options: -O -rtsopts
   build-depends:
       AdventOfCode2021
