@@ -87,3 +87,8 @@ executables:
     dependencies:
       - AdventOfCode2021
       - hmatrix
+  Day07:
+    main:                Main.hs
+    source-dirs:         src/Day07
+    dependencies:
+      - AdventOfCode2021
