@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 568ddd2646c84f12e9e4a7c364e45150e7f0fdc51b2e23b5cc792e687dc940f4
+-- hash: 01bc252bbfb36f882378f8ede9b3b0e065159e9d2b7e1b418a5baddb385373bc
 
 name:           AdventOfCode2021
 version:        0.1.0.0
@@ -229,6 +229,33 @@ executable Day07
       Paths_AdventOfCode2021
   hs-source-dirs:
       src/Day07
+  default-extensions:
+      OverloadedStrings
+      GeneralizedNewtypeDeriving
+      NamedFieldPuns
+      BangPatterns
+      GADTs
+      LambdaCase
+      RankNTypes
+      TupleSections
+  ghc-options: -O -rtsopts
+  build-depends:
+      AdventOfCode2021
+    , attoparsec >=0.13
+    , base >=4.7 && <5
+    , containers >=0.6
+    , extra >=1.7
+    , lens >=4.0
+    , text >=1.0
+    , vector >=0.12
+  default-language: Haskell2010
+
+executable Day08
+  main-is: Main.hs
+  other-modules:
+      Paths_AdventOfCode2021
+  hs-source-dirs:
+      src/Day08
   default-extensions:
       OverloadedStrings
       GeneralizedNewtypeDeriving
