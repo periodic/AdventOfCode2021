@@ -105,3 +105,9 @@ executables:
     dependencies:
       - AdventOfCode2021
       - mtl
+
+  Day10:
+    main:                Main.hs
+    source-dirs:         src/Day10
+    dependencies:
+      - AdventOfCode2021

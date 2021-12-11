@@ -1,4 +1,4 @@
-module Exercise (Solution (..), runSolution, runExercise, readInput, parseInput) where
+module Exercise (Solution(..), runSolution, runExercise, readInput, parseInput) where
 
 import Control.Monad
 import Criterion (benchmark, whnfAppIO)
@@ -11,9 +11,9 @@ import System.Exit (exitFailure)
 import Text.Printf (printf)
 
 data Solution a = Solution
-  { parser :: Attoparsec.Parser a,
-    part1 :: a -> Int,
-    part2 :: a -> Int
+  { solutionParser :: Attoparsec.Parser a,
+    solutionPart1 :: a -> Int,
+    solutionPart2 :: a -> Int
   }
 
 runSolution :: Solution a -> IO ()
