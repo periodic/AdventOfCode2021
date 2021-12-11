@@ -27,10 +27,10 @@ inputParser =
 -- Does not use repeated squaring.
 pow :: Matrix R -> Int -> Matrix R
 pow m n
-  | n == 0 = ident (rows m)
+  | n <= 0 = ident (rows m)
   | n == 1 = m
-  | otherwise =
-    m <> pow m (n -1)
+  | even n = pow (m <> m) (n `div` 2)
+  | otherwise = m <> pow m (n - 1)
 
 -- | Convert a list of numbers to a vector of counts
 -- This could be more efficient by accumulating counts, but this is good enough.
