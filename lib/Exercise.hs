@@ -1,14 +1,28 @@
-module Exercise (runExercise, readInput, parseInput) where
+module Exercise (Solution (..), runSolution, runExercise, readInput, parseInput) where
 
 import Control.Monad
-import Options.Applicative
-import System.Exit
+import Criterion (benchmark, whnfAppIO)
 import qualified Data.Attoparsec.Text as Attoparsec
-import System.CPUTime
-import Text.Printf
 import Data.Text (Text)
-import Data.Text.IO ( readFile )
-import Criterion
+import Data.Text.IO (readFile)
+import Options.Applicative
+import System.CPUTime (getCPUTime)
+import System.Exit (exitFailure)
+import Text.Printf (printf)
+
+data Solution a = Solution
+  { parser :: Attoparsec.Parser a,
+    part1 :: a -> Int,
+    part2 :: a -> Int
+  }
+
+runSolution :: Solution a -> IO ()
+runSolution (Solution parser part1 part2) = do
+  input <- parseInput parser
+  answer1 <- runExercise "Part 1" part1 input
+  printf "Part 1: %d\n" answer1
+  answer2 <- runExercise "Part 2" part2 input
+  printf "Part 2: %d\n" answer2
 
 -- TODO: Clean up this file.
 
@@ -28,10 +42,11 @@ argsInfo :: ParserInfo Arguments
 argsInfo =
   info argsParser mempty
 
-data Arguments = Arguments {
-  inputFile :: String,
-  benchmarking :: Bool
-} deriving Show
+data Arguments = Arguments
+  { inputFile :: String,
+    benchmarking :: Bool
+  }
+  deriving (Show)
 
 parseArgs :: IO Arguments
 parseArgs =
@@ -81,7 +96,7 @@ time name work input = do
       benchmark $ whnfAppIO work input
       work input
     else do
-      start <- getCPUTime 
+      start <- getCPUTime
       result <- work input
       end <- result `seq` getCPUTime
       printTimeDiff start end
