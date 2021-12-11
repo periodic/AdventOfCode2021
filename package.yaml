@@ -111,3 +111,11 @@ executables:
     source-dirs:         src/Day10
     dependencies:
       - AdventOfCode2021
+
+  Day11:
+    main:                Main.hs
+    source-dirs:         src/Day11
+    dependencies:
+      - AdventOfCode2021
+      - mtl
+      - array
