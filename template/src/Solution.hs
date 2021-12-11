@@ -3,10 +3,12 @@ module Solution where
 import qualified Data.Attoparsec.Text as P
 import Exercise
 
-solution :: Solution
+type Input = ()
+
+solution :: Solution Input
 solution =
   Solution
-    { parser = P.failure,
-      part1 = undefined,
-      part2 = undefined
+    { solutionParser = P.failure,
+      solutionPart1 = undefined,
+      solutionPart2 = undefined
     }
