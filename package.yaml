@@ -98,3 +98,10 @@ executables:
     source-dirs:         src/Day08
     dependencies:
       - AdventOfCode2021
+
+  Day09:
+    main:                Main.hs
+    source-dirs:         src/Day09
+    dependencies:
+      - AdventOfCode2021
+      - mtl
