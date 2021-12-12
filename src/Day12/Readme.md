@@ -8,6 +8,10 @@ Part two created a tricky wrinkle because you can only visit _one_ small cave tw
 
 I was a little worried that this problem would blow up exponentially and require tricks beyond brute force.  Fortunately, the inputs are small so that wasn't necessary.  It's possible we could get this runtime down even further, but I'd want to find ways to reduce the overall complexity as there isn't much issue at this scale.
 
+It's amazing just how much slower part 2 is than part 1 with just a simple change.  That alone blows up the problem exponentially because suddenly each path can have many different additions at many different points depending on the degree of the nodes.
+
+I did try representing the visited set as a list because it's small so it's possible that scanning would be faster, but with all the indirection for incremental lists it probably isn't worth it and it was about 80% slower.  It's possible that a sequence would work better.
+
 ```
 Parsing input...
 benchmarking...
