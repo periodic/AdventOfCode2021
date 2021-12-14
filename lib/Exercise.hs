@@ -18,7 +18,7 @@ data Solution a = Solution
 
 runSolution :: Solution a -> IO ()
 runSolution (Solution parser part1 part2) = do
-  input <- parseInput parser
+  input <- parseInput (parser <* Attoparsec.skipSpace <* Attoparsec.endOfInput)
   answer1 <- runExercise "Part 1" part1 input
   printf "Part 1: %d\n" answer1
   answer2 <- runExercise "Part 2" part2 input
