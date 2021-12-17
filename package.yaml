@@ -26,6 +26,7 @@ dependencies:
 - vector >= 0.12
 - lens >= 4.0
 - extra >= 1.7
+- mtl >= 2.2
 
 ghc-options:
 - -O
@@ -35,6 +36,7 @@ default-extensions:
 - OverloadedStrings
 - GeneralizedNewtypeDeriving
 - NamedFieldPuns
+- RecordWildCards
 - BangPatterns
 - GADTs
 - LambdaCase
@@ -104,7 +106,6 @@ executables:
     source-dirs:         src/Day09
     dependencies:
       - AdventOfCode2021
-      - mtl
 
   Day10:
     main:                Main.hs
@@ -117,7 +118,6 @@ executables:
     source-dirs:         src/Day11
     dependencies:
       - AdventOfCode2021
-      - mtl
       - array
 
   Day12:
@@ -144,3 +144,9 @@ executables:
     dependencies:
       - AdventOfCode2021
       - pqueue
+
+  Day16:
+    main:                Main.hs
+    source-dirs:         src/Day16
+    dependencies:
+      - AdventOfCode2021

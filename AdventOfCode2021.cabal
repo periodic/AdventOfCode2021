@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b00a42c01277be90a8623d67746d58dd60482ad15336addaf6e0af5aa3cad3dc
+-- hash: a0ea5b795ab24639bcf0a82d7194684321af7a1c9304acf373325faec4765de8
 
 name:           AdventOfCode2021
 version:        0.1.0.0
@@ -40,6 +40,7 @@ library
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -53,6 +54,7 @@ library
     , criterion >=1.5.7
     , extra >=1.7
     , lens >=4.0
+    , mtl >=2.2
     , optparse-applicative >=0.15
     , text >=1.0
     , vector >=0.12
@@ -68,6 +70,7 @@ executable Day01
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -81,6 +84,7 @@ executable Day01
     , containers >=0.6
     , extra >=1.7
     , lens >=4.0
+    , mtl >=2.2
     , text >=1.0
     , vector >=0.12
   default-language: Haskell2010
@@ -95,6 +99,7 @@ executable Day02
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -109,6 +114,7 @@ executable Day02
     , extra >=1.7
     , lens >=4.0
     , linear >=1.21
+    , mtl >=2.2
     , text >=1.0
     , vector >=0.12
   default-language: Haskell2010
@@ -123,6 +129,7 @@ executable Day03
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -136,6 +143,7 @@ executable Day03
     , containers >=0.6
     , extra >=1.7
     , lens >=4.0
+    , mtl >=2.2
     , text >=1.0
     , vector >=0.12
   default-language: Haskell2010
@@ -150,6 +158,7 @@ executable Day04
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -164,6 +173,7 @@ executable Day04
     , containers >=0.6
     , extra >=1.7
     , lens >=4.0
+    , mtl >=2.2
     , text >=1.0
     , vector >=0.12
   default-language: Haskell2010
@@ -178,6 +188,7 @@ executable Day05
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -192,6 +203,7 @@ executable Day05
     , containers >=0.6
     , extra >=1.7
     , lens >=4.0
+    , mtl >=2.2
     , text >=1.0
     , vector >=0.12
   default-language: Haskell2010
@@ -206,6 +218,7 @@ executable Day06
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -220,6 +233,7 @@ executable Day06
     , extra >=1.7
     , hmatrix
     , lens >=4.0
+    , mtl >=2.2
     , text >=1.0
     , vector >=0.12
   default-language: Haskell2010
@@ -234,6 +248,7 @@ executable Day07
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -247,6 +262,7 @@ executable Day07
     , containers >=0.6
     , extra >=1.7
     , lens >=4.0
+    , mtl >=2.2
     , text >=1.0
     , vector >=0.12
   default-language: Haskell2010
@@ -261,6 +277,7 @@ executable Day08
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -274,6 +291,7 @@ executable Day08
     , containers >=0.6
     , extra >=1.7
     , lens >=4.0
+    , mtl >=2.2
     , text >=1.0
     , vector >=0.12
   default-language: Haskell2010
@@ -288,6 +306,7 @@ executable Day09
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -301,7 +320,7 @@ executable Day09
     , containers >=0.6
     , extra >=1.7
     , lens >=4.0
-    , mtl
+    , mtl >=2.2
     , text >=1.0
     , vector >=0.12
   default-language: Haskell2010
@@ -317,6 +336,7 @@ executable Day10
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -330,6 +350,7 @@ executable Day10
     , containers >=0.6
     , extra >=1.7
     , lens >=4.0
+    , mtl >=2.2
     , text >=1.0
     , vector >=0.12
   default-language: Haskell2010
@@ -346,6 +367,7 @@ executable Day11
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -360,7 +382,7 @@ executable Day11
     , containers >=0.6
     , extra >=1.7
     , lens >=4.0
-    , mtl
+    , mtl >=2.2
     , text >=1.0
     , vector >=0.12
   default-language: Haskell2010
@@ -376,6 +398,7 @@ executable Day12
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -389,6 +412,7 @@ executable Day12
     , containers >=0.6
     , extra >=1.7
     , lens >=4.0
+    , mtl >=2.2
     , text >=1.0
     , vector >=0.12
   default-language: Haskell2010
@@ -404,6 +428,7 @@ executable Day13
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -417,6 +442,7 @@ executable Day13
     , containers >=0.6
     , extra >=1.7
     , lens >=4.0
+    , mtl >=2.2
     , text >=1.0
     , vector >=0.12
   default-language: Haskell2010
@@ -432,6 +458,7 @@ executable Day14
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -445,6 +472,7 @@ executable Day14
     , containers >=0.6
     , extra >=1.7
     , lens >=4.0
+    , mtl >=2.2
     , text >=1.0
     , vector >=0.12
   default-language: Haskell2010
@@ -461,6 +489,7 @@ executable Day15
       OverloadedStrings
       GeneralizedNewtypeDeriving
       NamedFieldPuns
+      RecordWildCards
       BangPatterns
       GADTs
       LambdaCase
@@ -474,7 +503,38 @@ executable Day15
     , containers >=0.6
     , extra >=1.7
     , lens >=4.0
+    , mtl >=2.2
     , pqueue
+    , text >=1.0
+    , vector >=0.12
+  default-language: Haskell2010
+
+executable Day16
+  main-is: Main.hs
+  other-modules:
+      Solution
+      Paths_AdventOfCode2021
+  hs-source-dirs:
+      src/Day16
+  default-extensions:
+      OverloadedStrings
+      GeneralizedNewtypeDeriving
+      NamedFieldPuns
+      RecordWildCards
+      BangPatterns
+      GADTs
+      LambdaCase
+      RankNTypes
+      TupleSections
+  ghc-options: -O -rtsopts
+  build-depends:
+      AdventOfCode2021
+    , attoparsec >=0.13
+    , base >=4.7 && <5
+    , containers >=0.6
+    , extra >=1.7
+    , lens >=4.0
+    , mtl >=2.2
     , text >=1.0
     , vector >=0.12
   default-language: Haskell2010
