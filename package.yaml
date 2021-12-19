@@ -156,3 +156,10 @@ executables:
     source-dirs:         src/Day17
     dependencies:
       - AdventOfCode2021
+
+  Day18:
+    main:                Main.hs
+    source-dirs:         src/Day18
+    dependencies:
+      - AdventOfCode2021
+      - hspec
