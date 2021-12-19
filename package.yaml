@@ -27,6 +27,8 @@ dependencies:
 - lens >= 4.0
 - extra >= 1.7
 - mtl >= 2.2
+- linear >= 1.21
+- hspec
 
 ghc-options:
 - -O
@@ -61,7 +63,6 @@ executables:
     source-dirs:         src/Day02
     dependencies:
       - AdventOfCode2021
-      - linear >= 1.21
 
   Day03:
     main:                Main.hs
@@ -162,4 +163,9 @@ executables:
     source-dirs:         src/Day18
     dependencies:
       - AdventOfCode2021
-      - hspec
+
+  Day19:
+    main:                Main.hs
+    source-dirs:         src/Day19
+    dependencies:
+      - AdventOfCode2021

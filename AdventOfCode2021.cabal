@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 274518541a5da77eea34c3f9e0e90de225bdb537062ae4e1067cc193c996a30f
+-- hash: c9eccf1610eca806fb0cca4799fa2264173a0b6a6b3e3de0342bb9db1cf4415f
 
 name:           AdventOfCode2021
 version:        0.1.0.0
@@ -53,7 +53,9 @@ library
     , containers >=0.6
     , criterion >=1.5.7
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , optparse-applicative >=0.15
     , text >=1.0
@@ -83,7 +85,9 @@ executable Day01
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
@@ -112,6 +116,7 @@ executable Day02
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
     , linear >=1.21
     , mtl >=2.2
@@ -142,7 +147,9 @@ executable Day03
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
@@ -172,7 +179,9 @@ executable Day04
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
@@ -202,7 +211,9 @@ executable Day05
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
@@ -232,7 +243,9 @@ executable Day06
     , containers >=0.6
     , extra >=1.7
     , hmatrix
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
@@ -261,7 +274,9 @@ executable Day07
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
@@ -290,7 +305,9 @@ executable Day08
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
@@ -319,7 +336,9 @@ executable Day09
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
@@ -349,7 +368,9 @@ executable Day10
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
@@ -381,7 +402,9 @@ executable Day11
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
@@ -411,7 +434,9 @@ executable Day12
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
@@ -441,7 +466,9 @@ executable Day13
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
@@ -471,7 +498,9 @@ executable Day14
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
@@ -502,7 +531,9 @@ executable Day15
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , pqueue
     , text >=1.0
@@ -533,7 +564,9 @@ executable Day16
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
@@ -563,7 +596,9 @@ executable Day17
     , base >=4.7 && <5
     , containers >=0.6
     , extra >=1.7
+    , hspec
     , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
@@ -596,6 +631,40 @@ executable Day18
     , extra >=1.7
     , hspec
     , lens >=4.0
+    , linear >=1.21
+    , mtl >=2.2
+    , text >=1.0
+    , vector >=0.12
+  default-language: Haskell2010
+
+executable Day19
+  main-is: Main.hs
+  other-modules:
+      Solution
+      Tests
+      Paths_AdventOfCode2021
+  hs-source-dirs:
+      src/Day19
+  default-extensions:
+      OverloadedStrings
+      GeneralizedNewtypeDeriving
+      NamedFieldPuns
+      RecordWildCards
+      BangPatterns
+      GADTs
+      LambdaCase
+      RankNTypes
+      TupleSections
+  ghc-options: -O -rtsopts
+  build-depends:
+      AdventOfCode2021
+    , attoparsec >=0.13
+    , base >=4.7 && <5
+    , containers >=0.6
+    , extra >=1.7
+    , hspec
+    , lens >=4.0
+    , linear >=1.21
     , mtl >=2.2
     , text >=1.0
     , vector >=0.12
