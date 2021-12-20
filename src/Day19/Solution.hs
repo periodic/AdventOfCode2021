@@ -178,10 +178,23 @@ countBeacons :: [Scanner] -> Int
 countBeacons =
   Set.size . Set.foldr (Set.union . getPoints) Set.empty . orientAll
 
+oceanSize :: [Scanner] -> Int
+oceanSize scanners =
+  let orientedScanners = Set.toList $ orientAll scanners
+  in maximum $ do
+    s1 <- orientedScanners
+    s2 <- orientedScanners
+    return (distance s1 s2)
+  where
+    distance Scanner { scannerPos = p1 } Scanner { scannerPos = p2 } =
+      let V3 x1 y1 z1 = p1
+          V3 x2 y2 z2 = p2
+      in abs (x1 - x2) + abs (y1 - y2) + abs (z1 - z2)
+
 solution :: Solution Input
 solution =
   Solution
     { solutionParser = inputParser,
       solutionPart1 = countBeacons . map scanner,
-      solutionPart2 = undefined
+      solutionPart2 = oceanSize . map scanner
     }
