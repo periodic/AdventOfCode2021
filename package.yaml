@@ -169,3 +169,9 @@ executables:
     source-dirs:         src/Day19
     dependencies:
       - AdventOfCode2021
+
+  Day20:
+    main:                Main.hs
+    source-dirs:         src/Day20
+    dependencies:
+      - AdventOfCode2021
