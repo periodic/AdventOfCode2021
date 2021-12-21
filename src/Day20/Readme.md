@@ -9,35 +9,37 @@ I'm not too happy with the second part.  If it really were just 25 times as many
 Possible avenues of exploration include:
 
 - Use unboxed vectors/arrays to store data instead of maps.  I used an IntMap for the algorithm, but since it's size is fixed and it is immutable I could use a much more fixed datastructure.
+  - Changing the algorithm map to an unboxed vector gave only a modest 5% speed up.
+  - Over half the time is spent just looking up values!  Switching to an unboxed array for the image data, even if we rebuild it each time, brings execution time down by about 70%.
 - Use a better data type than Bool.  It seems to map well to the problem space for on/off, but may not store as efficiently as I'd like.
 - Maybe there's a way to calculate the next iteration without reading each square nine times by keeping a running tally or something.
 
 ```
 Parsing input...
 benchmarking...
-time                 770.5 μs   (763.4 μs .. 778.9 μs)
-                     0.999 R²   (0.998 R² .. 1.000 R²)
-mean                 757.5 μs   (753.4 μs .. 763.5 μs)
-std dev              16.71 μs   (10.96 μs .. 26.24 μs)
-variance introduced by outliers: 12% (moderately inflated)
+time                 749.7 μs   (745.1 μs .. 755.6 μs)
+                     0.999 R²   (0.999 R² .. 1.000 R²)
+mean                 764.8 μs   (758.9 μs .. 777.7 μs)
+std dev              28.18 μs   (11.30 μs .. 45.99 μs)
+variance introduced by outliers: 28% (moderately inflated)
 
 ================================================================================
 Running Part 1...
 benchmarking...
-time                 24.83 ms   (24.29 ms .. 25.19 ms)
-                     0.998 R²   (0.994 R² .. 1.000 R²)
-mean                 25.33 ms   (25.07 ms .. 25.98 ms)
-std dev              842.0 μs   (442.0 μs .. 1.542 ms)
+time                 7.921 ms   (7.806 ms .. 8.069 ms)
+                     0.998 R²   (0.996 R² .. 0.999 R²)
+mean                 7.820 ms   (7.771 ms .. 7.895 ms)
+std dev              177.0 μs   (122.2 μs .. 244.0 μs)
 
-Part 1: 5464
+Part 1: 5521
 ================================================================================
 Running Part 2...
 benchmarking...
-time                 1.748 s    (1.692 s .. 1.786 s)
-                     1.000 R²   (1.000 R² .. 1.000 R²)
-mean                 1.808 s    (1.782 s .. 1.858 s)
-std dev              49.02 ms   (176.1 μs .. 59.48 ms)
+time                 549.5 ms   (346.4 ms .. 703.6 ms)
+                     0.985 R²   (0.945 R² .. 1.000 R²)
+mean                 598.9 ms   (563.8 ms .. 626.1 ms)
+std dev              34.11 ms   (17.91 ms .. 40.90 ms)
 variance introduced by outliers: 19% (moderately inflated)
 
-Part 2: 19228
+Part 2: 20247
 ```

@@ -6,12 +6,16 @@ import Data.Functor
 import ParserHelpers
 import Data.Map (Map)
 import qualified Data.Map as Map
-import qualified Data.IntMap as IntMap
+import Data.Vector.Unboxed (Vector)
+import qualified Data.Vector.Unboxed as Vector
+import Data.Array.Unboxed (UArray)
+import qualified Data.Array.Unboxed as UArray
+import Data.Ix
+import Data.List (minimumBy, maximumBy)
+import Data.Ord (comparing)
 
 type Coord = (Int, Int)
-data Image = Image { imageDefault :: Bool, imageData :: Map Coord Bool }
-type Algorithm = Map Int Bool
-type Input = ([Bool], Image)
+data Image = Image { imageDefault :: Bool, imageBounds :: (Coord, Coord), imageData :: UArray Coord Bool }
 
 instance Show Image where
   show image = 
@@ -19,30 +23,53 @@ instance Show Image where
         showRow y = map (\x -> if getPixel image (x, y) then '#' else '.') [minX..maxX]
     in unlines $ map showRow [minY..maxY]
 
-imageBounds :: Image -> ((Int, Int), (Int, Int))
-imageBounds (Image _ m) =
-  let ((minX, minY), _) = Map.findMin m
-      ((maxX, maxY), _) = Map.findMax m
-  in ((minX, minY), (maxX, maxY))
-
 getPixel :: Image -> Coord -> Bool
 getPixel image c =
-  Map.findWithDefault (imageDefault image) c (imageData image)
+  let bounds = imageBounds image
+  in if inRange bounds c
+     then imageData image UArray.! c
+     else imageDefault image
+
+imageFromList :: [(Coord, Bool)] -> Image
+imageFromList pixels =
+  let minBound = fst $ minimumBy (comparing fst) pixels
+      maxBound = fst $ maximumBy (comparing fst) pixels
+  in Image {
+    imageDefault = False,
+    imageBounds = (minBound, maxBound),
+    imageData = UArray.array (minBound, maxBound) pixels
+  }
+
+countLit :: Image -> Int
+countLit =
+  length . filter (id) . UArray.elems . imageData
+
+type Algorithm = Vector Bool
+
+algoFromList :: [Bool] -> Algorithm
+algoFromList =
+  Vector.fromList
+
+lookupValue :: Algorithm -> Int -> Bool
+lookupValue algo v =
+  algo Vector.! v  
 
 -- Parser
 --------------------------------------------------
+
+type Input = (Algorithm, Image)
 
 entryParser :: P.Parser Bool
 entryParser =
   P.choice [ "#" $> True, "." $> False ]
 
-algoParser :: P.Parser [Bool]
+algoParser :: P.Parser Algorithm
 algoParser =
-  concat <$> P.many1 entryParser `P.sepBy` P.endOfLine
+  algoFromList . concat <$> P.many1 entryParser `P.sepBy` P.endOfLine
 
 imageParser :: P.Parser Image
 imageParser =
-  Image False . Map.fromList <$> parseGrid (P.many1 entryParser)
+  imageFromList <$> parseGrid (P.many1 entryParser)
 
 inputParser :: P.Parser Input
 inputParser = do
@@ -52,22 +79,13 @@ inputParser = do
   image <- imageParser
   return (algo,image)
 
-algoToMap :: [Bool] -> Map Int Bool
-algoToMap =
-  Map.fromList . zip [0..]
-
 -- Part 1
 --------------------------------------------------
 
 getValue :: Image -> Coord -> Int
 getValue image (x, y) =
   let coords = [(x', y') | y' <- [y-1..y+1], x' <- [x-1..x+1]]
-      pixels = map (getPixel image) coords
-  in foldl (\acc p -> 2 * acc + if p then 1 else 0) 0 pixels
-
-lookupValue :: Algorithm -> Int -> Bool
-lookupValue algo v =
-  Map.findWithDefault (error $ "Value not in algorithm: " ++ show v) v algo
+  in foldr (\p acc -> 2 * acc + if getPixel image p then 1 else 0) 0 coords
 
 enhance :: Algorithm -> Image -> Image
 enhance algo image =
@@ -75,21 +93,15 @@ enhance algo image =
       coords = [(x, y) | y <- [minY-1..maxY+1], x <- [minX-1..maxX+1]]
       defaultValue = getValue image (minX - 1000, minY - 1000)
       newDefault = lookupValue algo defaultValue
-  in Image newDefault . Map.fromList $ map (\c -> (c, lookupValue algo . getValue image $ c)) coords
-
-countLit :: Image -> Int
-countLit =
-  Map.foldl (\acc p -> acc + if p then 1 else 0) 0 . imageData
+  in imageFromList $ map (\c -> (c, lookupValue algo . getValue image $ c)) coords
 
 part1 :: Input -> Int
 part1 (algo, image) =
-  let algoMap = algoToMap algo
-  in countLit . enhance algoMap $ enhance algoMap image
+  countLit . enhance algo $ enhance algo image
 
 part2 :: Input -> Int
 part2 (algo, image) =
-  let algoMap = algoToMap algo
-  in countLit $ foldr ($) image (replicate 50 (enhance algoMap))
+  countLit $ foldr ($) image (replicate 50 (enhance algo))
 
 solution :: Solution Input
 solution =
