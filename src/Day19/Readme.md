@@ -10,7 +10,7 @@ I made a few false starts that may be visible in the code still.  I made it more
 
 This one is a doozy.  I'm not happy with the run-time at all.  In the future I'd lean on more linear algebra.
 
-There should also hopefully be a way to do this without just trying every combination.
+There should also hopefully be a way to do this without just trying every combination.  One possible heuristic is to calculate the nearest neighbor numbers for each point in a scanner's set.  That would give a rotation and position independent way to compare them.
 
 ```
 Parsing input...
