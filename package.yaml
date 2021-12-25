@@ -201,3 +201,11 @@ executables:
     source-dirs:         src/Day24
     dependencies:
       - AdventOfCode2021
+
+  Day25:
+    main:                Main.hs
+    source-dirs:         src/Day25
+    dependencies:
+      - AdventOfCode2021
+      - array
+      - primitive
