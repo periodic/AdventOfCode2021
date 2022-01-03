@@ -6,7 +6,7 @@ It's another state iteration one.  This doesn't look like there are any tricks t
 
 I'm not at all happy with how long this took to run.  I did a little profiling and the biggest offender is the memory allocation when comparing the arrays.  Apparently those lists are not lazy (makes sense when they are mutable) and there is no primitive comparison function!  I'll have to write my own some day or contribute back.
 
-The simpler way to improve this is just have the updating function return whether anything has changed.  Not too hard to switch from `CucumberM s ()` to `CucumberM s Bool`.
+The simpler way to improve this is just have the updating function return whether anything has changed.  Not too hard to switch from `CucumberM s ()` to `CucumberM s Bool`.  Also, there is no need to keep two copies of the state because sea cucumbers can only move in one direction so as long as it is scanned in the same direction only looking at the next space is fine.  Just don't forget to remember one bit of state for the wrap-around.
 
 ```
 Parsing input...
